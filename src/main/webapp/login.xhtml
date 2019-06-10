@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:body>
+        <h1>Login</h1>
+
+        <h:form id="myform">
+
+            <h:messages globalOnly="true" style="color:red;margin:8px;" />
+
+            <h:outputText value="Username: "/>
+            <h:inputText label="Username" value="#{loginController.username}" /><br/><br/>
+            <h:outputText value="Password: "/>
+            <h:inputSecret value="#{loginController.password}" /><br/><br/>
+            <h:commandButton value="login" action="#{loginController.doLogin()}" />
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
