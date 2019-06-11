@@ -2,14 +2,14 @@
     box-sizing: border-box; 
 }
 body {
-   display: flex;
+    display: flex;
     min-height: 100vh;
     flex-direction: row;
     margin: 0;
 }
 #nav {
     background: #D7E8D4;
-    flex: 1;
+    flex: 0.5;
 }
 .main-content {
     display: flex;
@@ -19,7 +19,7 @@ body {
 
 #header {
     background: yellowgreen;
-    height: 20vh;
+    height: 8vh;
     padding: 1em;
 }
 
@@ -29,8 +29,8 @@ body {
 }
 
 #content > #article {
-    flex: 3;
-    min-height: 60vh;
+    flex: 8;
+    min-height: 82vh;
 }
 
 #content > #aside {
@@ -38,9 +38,10 @@ body {
     flex: 1;
 }
 
-
 #footer {
-     background: yellowgreen;
-    height: 20vh;
+    background: yellowgreen;
+    height: 10vh;
     padding: 1em;
 }
+
+/*https://www.quackit.com/html/html_editors/scratchpad/?example=/css/flexbox/examples/flexbox_website_layout_2*/
