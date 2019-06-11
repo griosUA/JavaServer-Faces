@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite/composite">
+    <h:body>
+        <ui:composition template="/templates/common.xhtml">
+            <ui:define name="title">#{msgs.ajax}</ui:define>
+            <ui:define name="article">
+
+                <nav class="top-nav">
+                    <composite:tab text="#{msgs.ajaxBasic}" condition="#{param.mode eq 'ajaxBasic'}" link="?mode="/>
+                    <!--                    <composite:tab text="# {msgs.listCollection}" condition="# {param.mode eq 'listCollection'}" link="?mode=listCollection"/>-->
+                </nav>
+
+                <c:if test="#{empty param.mode}">
+                    <ui:include src="./ajaxBasic.xhtml"/>
+                </c:if>
+                <!--                <c:if test="# {param.mode eq 'listCollection'}">
+                                    <ui:include src="./listCollection.xhtml"/>
+                                </c:if>-->
+
+            </ui:define>
+
+            <ui:define name="aside">
+                ss
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
