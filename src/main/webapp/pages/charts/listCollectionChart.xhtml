@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:hf="http://highfaces.org"
+                >
+
+
+    <hf:chart type="line"  title="List of Tanks" xaxisLabel="name" >
+    <hf:chartAxis position="w" title="Max Speed" type="linear" />
+    <hf:chartAxis id="weightAxis" position="e" title="Weight" type="linear" />
+    <hf:chartSerie name="cannon" value="#{listIterateBean.tvList}" var="point" point="#{point.cannon}" tickLabel="#{point.name}" />
+    <hf:chartSerie yaxis="weightAxis" name="weight" value="#{listIterateBean.tvList}" var="point" point="#{point.weight}"  />
+    <hf:chartSerie yaxis="temperatureAxis" name="maxSpeed" value="#{listIterateBean.tvList}" var="point" point="#{point.maxSpeed}"  />
+</hf:chart>
+    
+    
+     <hf:chart type="column" title="Tanks cannon" xaxisLabel="Name" yaxisLabel="cannon">
+        <hf:chartSerie name="cannon" value="#{listIterateBean.tvList}" var="ppp" point="#{ppp.cannon}"  tickLabel="#{ppp.name}"/>
+    </hf:chart>
+    
+     <hf:chart type="line" title="Tanks weight" xaxisLabel="Name" yaxisLabel="weight">
+        <hf:chartSerie name="weight" value="#{listIterateBean.tvList}" var="ppp" point="#{ppp.weight}"  tickLabel="#{ppp.name}"/>
+    </hf:chart>
+
+    <hf:chart type="column" title="Tanks maxSpeed" xaxisLabel="Name" yaxisLabel="maxSpeed">
+        <hf:chartSerie name="maxSpeed" value="#{listIterateBean.tvList}" var="ppp" point="#{ppp.maxSpeed}"  tickLabel="#{ppp.name}"/>
+    </hf:chart>
+
+</ui:composition>
+
+

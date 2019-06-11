@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:hf="http://highfaces.org"
+                >
+
+    <h:dataTable value="#{listIterateBean.tvList}" var="tdata">
+        <h:column>    				
+            <f:facet name="header">#{msgs.name}</f:facet>    				
+            <h:outputText value="#{tdata.name}"/>
+        </h:column>
+        <h:column>    				
+            <f:facet name="header">#{msgs.cannon}</f:facet>    				
+            <h:outputText value="#{tdata.cannon}"/>
+        </h:column>
+        <h:column>    				
+            <f:facet name="header">#{msgs.weight}</f:facet>    				
+            <h:outputText value="#{tdata.weight}"/>
+        </h:column>
+        <h:column>    				
+            <f:facet name="header">#{msgs.maxSpeed}</f:facet>    				
+            <h:outputText value="#{tdata.maxSpeed}"/>
+        </h:column>
+    </h:dataTable>
+</ui:composition>
+
+
