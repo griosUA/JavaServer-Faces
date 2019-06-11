@@ -35,7 +35,7 @@ body {
 
 #content > #aside {
     background: beige;
-    flex: 1;
+    flex: 8;
 }
 
 #footer {
