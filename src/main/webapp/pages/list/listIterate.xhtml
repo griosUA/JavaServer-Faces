@@ -5,8 +5,16 @@
                 xmlns:b="http://bootsfaces.net/ui"
                 xmlns:hf="http://highfaces.org"
                 >
+string:
+    <ui:repeat value="#{listIterateBean.listString}" var="ls">
+        #{ls} <br/>
+    </ui:repeat>
+    <br/>
+    integer:
+    <ui:repeat value="#{listIterateBean.listInteger}" var="li">
+        #{li} <br/>
+    </ui:repeat>
 
-    <div>list iteration</div>
 </ui:composition>
 
 

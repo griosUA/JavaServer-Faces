@@ -13,11 +13,14 @@
                 
                 <nav class="top-nav">
                     <composite:tab text="#{msgs.list}" condition="#{param.mode eq 'list'}" link="?mode="/>
-                    <!--<composite:tab text="# {msgs.some2}" condition="# {param.mode eq 'some2'}" link="?mode=some2"/>-->
+                    <composite:tab text="#{msgs.listCollection}" condition="#{param.mode eq 'listCollection'}" link="?mode=listCollection"/>
                 </nav>
                 
                 <c:if test="#{empty param.mode}">
                     <ui:include src="./listIterate.xhtml"/>
+                </c:if>
+                <c:if test="#{param.mode eq 'listCollection'}">
+                    <ui:include src="./listCollection.xhtml"/>
                 </c:if>
                
                 
