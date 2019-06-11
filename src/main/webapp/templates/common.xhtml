@@ -12,6 +12,7 @@
         <title>#{msgs.projName} | <ui:insert name="title"></ui:insert> </title>
         <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
         <h:outputStylesheet name="layout.css" library="css" />
+        <h:outputStylesheet name="style.css" library="css" />
 
     </h:head>
 
@@ -31,11 +32,6 @@
                 <div id="article">
                     <ui:insert name="article">
                         <ui:include src="/templates/article.xhtml" />
-                    </ui:insert>
-                </div>
-                <div id="aside">
-                    <ui:insert name="aside">
-                        <ui:include src="/templates/aside.xhtml" />
                     </ui:insert>
                 </div>
             </div>

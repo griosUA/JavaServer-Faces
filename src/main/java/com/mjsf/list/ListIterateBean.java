@@ -24,6 +24,7 @@ public class ListIterateBean {
     private ArrayList<TanksView> tvList;
 
     public ListIterateBean() {
+
     }
 
     @PostConstruct
@@ -41,20 +42,20 @@ public class ListIterateBean {
         listInteger.add(3);
         listInteger.add(4);
         listInteger.add(5);
-
        loadTanksData();
     }
 
     public void loadTanksData() {
         tvList = new ArrayList<TanksView>(Arrays.asList(
-                        new TanksView("T84", 84, 84, 84),
-                        new TanksView("AMX-56 Leclerc", 56, 56, 56),
+                        new TanksView("T84", 84, 56, 555),
+                        new TanksView("AMX-56 Leclerc", 56, 123, 11),
                         new TanksView("Challenger 2", 2, 2, 2),
-                        new TanksView("Leopard 2A7+", 22, 22, 22),
-                        new TanksView("Merkava IVm", 44, 44, 546),
-                        new TanksView("M1A2 SEPv2", 333, 333, 26)
+                        new TanksView("Leopard 2A7+", 32, 3543, 2525),
+                        new TanksView("Merkava IVm", 25, 434, 33),
+                        new TanksView("M1A2 SEPv2", 321, 3331, 43)
                 ));
     }
+  
 
     public ArrayList<String> getListString() {
         return listString;
