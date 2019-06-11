@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box; 
+}
+body {
+   display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+}
+#nav {
+    background: #D7E8D4;
+    flex: 1;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+#header {
+    background: yellowgreen;
+    height: 20vh;
+    padding: 1em;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
+#content > #article {
+    flex: 3;
+    min-height: 60vh;
+}
+
+#content > #aside {
+    background: beige;
+    flex: 1;
+}
+
+
+#footer {
+     background: yellowgreen;
+    height: 20vh;
+    padding: 1em;
+}

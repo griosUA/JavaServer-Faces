@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no" />
+        <!--        <f:loadBundle basename="com.mjsf.message.messages" var="msgs"/>-->
+        <title>#{msgs.projName} | <ui:insert name="title"></ui:insert> </title>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+        <h:outputStylesheet name="layout.css" library="css" />
+
+    </h:head>
+
+    <h:body>
+        <div id="nav">
+            <ui:insert name="nav">
+                <ui:include src="/templates/nav.xhtml" />
+            </ui:insert>
+        </div>
+        <div class="main-content">
+            <div id="header">
+                <ui:insert name="header">
+                    <ui:include src="/templates/header.xhtml" />
+                </ui:insert>
+            </div>
+            <div id="content">
+                <div id="article">
+                    <ui:insert name="article">
+                        <ui:include src="/templates/article.xhtml" />
+                    </ui:insert>
+                </div>
+                <div id="aside">
+                    <ui:insert name="aside">
+                        <ui:include src="/templates/aside.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+            <div id="footer">
+                <ui:insert name="footer">
+                    <ui:include src="/templates/footer.xhtml" />
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>
