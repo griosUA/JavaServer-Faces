@@ -6,11 +6,11 @@
                 xmlns:hf="http://highfaces.org"
                 >
 string:
-    <ui:repeat value="#{listIterateBean.listString}" var="ls">
-        #{ls} <br/>
+<ui:repeat value="#{listIterateBean.listString}" var="ls" varStatus="vs">
+  index:  #{vs.index} listContent:   #{ls} <br/>
     </ui:repeat>
     <br/>
-    integer:
+    integer: <br/>
     <ui:repeat value="#{listIterateBean.listInteger}" var="li">
         #{li} <br/>
     </ui:repeat>

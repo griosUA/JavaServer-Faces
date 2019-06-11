@@ -30,7 +30,7 @@ public class LoginController implements Serializable {
         if (this.username.equals("admin") && this.password.equals("admin")) {
             context.getExternalContext().getSessionMap().put("user", username);
             try {
-                context.getExternalContext().redirect("./pages/index.xhtml");
+                context.getExternalContext().redirect("./pages/list/index.xhtml");
             } catch (IOException e) {
                 e.printStackTrace();
             }
