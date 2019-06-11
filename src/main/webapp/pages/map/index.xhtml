@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite/composite">
+    <h:body>
+        <ui:composition template="/templates/common.xhtml">
+            <ui:define name="title">#{msgs.map}</ui:define>
+            <ui:define name="article">
+                
+                <nav class="top-nav">
+                    <composite:tab text="#{msgs.dataTable}" condition="#{param.mode eq 'dataTable'}" link="?mode="/>
+                    <composite:tab text="#{msgs.uiRepeat}" condition="#{param.mode eq 'mapUiRepeat'}" link="?mode=mapUiRepeat"/>
+                    <composite:tab text="#{msgs.forEach}" condition="#{param.mode eq 'mapForEach'}" link="?mode=mapForEach"/>
+                </nav>
+                
+                <c:if test="#{empty param.mode}">
+                    <ui:include src="./mapDataTable.xhtml"/>
+                </c:if>
+                <c:if test="#{param.mode eq 'mapUiRepeat'}">
+                    <ui:include src="./mapUiRepeat.xhtml"/>
+                </c:if>
+                <c:if test="#{param.mode eq 'mapForEach'}">
+                    <ui:include src="./mapForEach.xhtml"/>
+                </c:if>
+               
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

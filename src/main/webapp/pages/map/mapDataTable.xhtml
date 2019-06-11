@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                >
+
+    <h:dataTable value="#{mapIterateBean.tankMap.entrySet().toArray()}" var="tMap">
+        <h:column>    				
+            <f:facet name="header">#{msgs.postion}</f:facet>    				
+            <h:outputText value="#{tMap.key}"/>
+        </h:column>
+        <h:column>    				
+            <f:facet name="header">#{msgs.name}</f:facet>    				
+            <h:outputText value="#{tMap.value}"/>
+        </h:column>
+    </h:dataTable>
+</ui:composition>
+
+
