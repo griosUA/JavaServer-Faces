@@ -4,7 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+    <head>
+        <title>do login</title>
+    </head>
     <h:body>
         <h1>Login</h1>
         <h:form id="myform">
@@ -17,6 +21,9 @@
             <h:inputSecret value="#{loginController.password}" /><br/><br/>
             <h:commandButton value="login" action="#{loginController.doLogin()}" />
         </h:form>
+
+
+        
     </h:body>
 </html>
 

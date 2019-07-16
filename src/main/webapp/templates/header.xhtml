@@ -5,10 +5,15 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-          
-     >
+
+      >
     <h:body>
-      header
-        
+        <h:panelGroup rendered="#{not empty user}">
+            <p>Welcome, #{user}</p>
+            <h:form>
+                <h:commandButton value="logout" action="#{loginController.logout}" />
+            </h:form>
+        </h:panelGroup>
+
     </h:body>
 </html>
