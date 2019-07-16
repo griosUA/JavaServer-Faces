@@ -2,14 +2,14 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
-                    
+
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <h:form>
-        <h:commandButton value="tse" action="#{httpReqBean.doGetUsers()}"/>
+        <h:commandButton value="#{msgs.doGetHttp}" action="#{httpReqBean.doGetUsers()}"/>
     </h:form>
 
-    <h:dataTable value="#{httpReqBean.usersList}" var="ul">
+    <h:dataTable value="#{httpReqBean.usersList}" var="ul" rendered="#{not empty httpReqBean.usersList}">
         <h:column>    				
             <f:facet name="header">#{msgs.id}</f:facet>    				
             <h:outputText value="#{ul.id}"/>
@@ -27,17 +27,6 @@
             <h:outputText value="#{ul.email}"/>
         </h:column>
         <h:column>    				
-            <f:facet name="header">#{msgs.address}</f:facet>  
-            <!--# {httpReqBean.address}-->
-<!--            <c:forEach items="# {httpReqBean.address}" var="aa">
-                # {aa.street}
-            </c:forEach>
-            <ui:repeat value="# {httpReqBean.address}" var="ua">
-                # {ua.street}
-                
-            </ui:repeat>          -->
-        </h:column>
-         <h:column>    				
             <f:facet name="header">#{msgs.phone}</f:facet>    				
             <h:outputText value="#{ul.phone}"/>
         </h:column>
@@ -46,6 +35,10 @@
             <h:outputText value="#{ul.website}"/>
         </h:column>
     </h:dataTable>
+    
+    <h:panelGroup rendered="#{empty httpReqBean.usersList}">
+        press btn
+    </h:panelGroup>
 </ui:composition>
 
 

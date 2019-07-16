@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.lang.reflect.Type;
+import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -29,7 +31,6 @@ public class HttpReqBean {
     private static HttpURLConnection connection;
     private String urlUsr = "https://jsonplaceholder.typicode.com/users";
     private ArrayList<Users> usersList;
-    private ArrayList<UsrsAdr> address;
 
     public HttpReqBean() {
     }
@@ -63,9 +64,9 @@ public class HttpReqBean {
                 }
                 reader.close();
             }
-           // System.out.println("console: " + responseContent.toString());
+            // System.out.println("console: " + responseContent.toString());
             parseContetnt(responseContent.toString());
-           // parseAdress(responseContent.toString());
+        //  parseAdress(responseContent.toString());
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -75,10 +76,9 @@ public class HttpReqBean {
             connection.disconnect();
         }
     }
-    
 
     public String parseContetnt(String responseContent) {
-
+      
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Users>>() {
         }.getType();
@@ -89,74 +89,33 @@ public class HttpReqBean {
             usersList.add(ul.get(i));
         }
         return null;
-        
+
+
+//Gson gson = new Gson();
+//        Users tvi = gson.fromJson(responseContent, Users.class);
+//        usersList = new ArrayList<Users>();
+//        usersList.add(tvi);
+//        return null;
+
 //        Gson gson = new Gson();
 //
 //        Users ul = gson.fromJson(responseContent, Users.class);
 //        usersList = new ArrayList<Users>();
 //        usersList.add(ul);
- //return null;
+// return null;
 
-    }
-    
-   public String parseAdress(String responseContent) {
-//       Gson gson = new Gson();
-//        Type listType = new TypeToken<ArrayList<UsrsAdr>>() {
-//        }.getType();
-//        ArrayList<UsrsAdr> ua = gson.fromJson(responseContent, listType);
-//        address = new ArrayList<>();
-//
-//        for (int i = 0; i < ua.size(); i++) {
-//            address.add(ua.get(i));
-//        }
-//        System.out.println(address);
-//        
-//        for (int i=0; i < address.size(); i++) {
-//            System.out.println(address.get(i).getCity());
-//   }
-//        return null;
-        
 //        Gson gson = new Gson();
-//
-//        UsrsAdr aa = gson.fromJson(responseContent, UsrsAdr.class);
-//        address = new ArrayList<UsrsAdr>();
-//        address.add(aa);
-     //   System.out.println(address);
- //return null;
- 
-// Gson gson = new Gson();
-//        Type listType = new TypeToken<ArrayList<UsrsAdr>>() {
+//        Type collectionType = new TypeToken<ArrayList<Users>>() {
 //        }.getType();
-//        ArrayList<UsrsAdr> varm = gson.fromJson(responseContent, listType);
-//        address = new ArrayList<>();
+//        ArrayList<Users> lcs = (ArrayList<Users>) new Gson()
+//                .fromJson(responseContent, collectionType);
+//        
+//                usersList = new ArrayList<>();
 //
-//        for (int i = 0; i < varm.size(); i++) {
-//            address.add(varm.get(i));
+//        for (int i = 0; i < lcs.size(); i++) {
+//            usersList.add(lcs.get(i));
 //        }
 //        return null;
-
-// Gson gson = new Gson();
-//        Type listType = new TypeToken<ArrayList<UsrsAdr>>() {
-//        }.getType();
-//        ArrayList<UsrsAdr> tv = gson.fromJson(responseContent, listType);
-//        address = new ArrayList<>();
-//
-//        for (int i = 0; i < tv.size(); i++) {
-//            address.add(tv.get(i));
-//        }
-//        return null;
-
-// Gson gson = new Gson();
-//        UsrsAdr tvi = gson.fromJson(responseContent, UsrsAdr.class);
-//        address = new ArrayList<UsrsAdr>();
-//        address.add(tvi);
-//        return null;
-
-
-return null;
- 
- 
-
    }
 
     public ArrayList<Users> getUsersList() {
@@ -167,14 +126,7 @@ return null;
         this.usersList = usersList;
     }
 
-    public ArrayList<UsrsAdr> getAddress() {
-        return address;
-    }
 
-    public void setAddress(ArrayList<UsrsAdr> address) {
-        this.address = address;
-    }
-    
-    
+  
 
 }

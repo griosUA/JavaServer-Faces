@@ -6,6 +6,7 @@
 package com.mjsf.httpreq;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,12 +17,12 @@ public class Users {
     private String name;
     private String username;
     private String email;
-    // private ArrayList<UsrsAdr> address;
+ // private List<Adress> address;
     private String phone;
     private String website;
-   // private ArrayList<UsrCompany> company;
+  // private ArrayList<UsrCompany> company;
 
-    public Users(int id, String name, String username, String email, ArrayList<UsrsAdr> address, String phone, String website) {
+    public Users(int id, String name, String username, String email, List<Adress> address, String phone, String website, ArrayList<UsrCompany> company) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -29,9 +30,8 @@ public class Users {
       //  this.address = address;
         this.phone = phone;
         this.website = website;
+     //   this.company = company;
     }
-
-    
 
     public int getId() {
         return id;
@@ -65,6 +65,14 @@ public class Users {
         this.email = email;
     }
 
+//    public ArrayList<UsrsAdr> getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(ArrayList<UsrsAdr> address) {
+//        this.address = address;
+//    }
+
     public String getPhone() {
         return phone;
     }
@@ -81,14 +89,14 @@ public class Users {
         this.website = website;
     }
 
-//    public ArrayList<UsrsAdr> getAddress() {
-//        return address;
+//    public ArrayList<UsrCompany> getCompany() {
+//        return company;
 //    }
 //
-//    public void setAddress(ArrayList<UsrsAdr> address) {
-//        this.address = address;
+//    public void setCompany(ArrayList<UsrCompany> company) {
+//        this.company = company;
 //    }
 
-    
+   
     
 }
